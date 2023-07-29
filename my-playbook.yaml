@@ -1,0 +1,12 @@
+---
+- name: Create nginx server
+  hosts: webserver
+  tasks: 
+  - name: install the Nginx server
+    apt:
+      name: nginx=1.18*
+      state: absent
+  - name: Start the installed nginx
+    service:
+      name: nginx
+      state: stopped
